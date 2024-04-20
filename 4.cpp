@@ -1,41 +1,51 @@
-
 #include <stdio.h>
 #include <math.h>
-int opcion, cateto1, cateto2, hipotenusa;
+int cateto1, cateto2, hipotenusa, opcion, seguir;
 main(){
-	printf("Indique el valor que desee ingresar (1, 2, o 3): ");
-	printf("\n1- Cateto 1 y cateto 2");
-	printf("\n2- Cateto 1 y hipotenusa");
-	printf("\n3- Cateto 2 y hipotenusa: ");
+	do{
+	printf("Eliga una opcion (1, 2, 3): ");
 	scanf("%d", & opcion);
-	
-	switch (opcion){
-		case 1:
-			printf("\nIngrese el valor del cateto 1: ");
+		switch(opcion){
+			case 1:
+			printf("Ingrese cateto 1: ");
 			scanf("%d", & cateto1);
-			printf("\nIngrese el valor del cateto : ");
+			printf("Ingrese cateto 2: ");
 			scanf("%d", & cateto2);
-			hipotenusa = sqrt(cateto1*cateto1 + cateto2*cateto2);
-		break;
-		
-		case 2:
-			printf("\nIngrese el valor del cateto 1: ");
+			hipotenusa = sqrt(cateto1+cateto1 + cateto2*cateto2);
+			printf("\nEl valor del cateto 1 es: %d", cateto1);
+			printf("\nEl valor del cateto 2 es: %d", cateto2);
+			printf("\nEl valor de la hipotenusa es: %d", hipotenusa);
+			break;
+			
+			case 2:
+			printf("Ingrese cateto 1: ");
 			scanf("%d", & cateto1);
-			printf("\nIngrese el valor de la hipotenusa: ");
+			
+			printf("Ingrese la hipotenusa: ");
 			scanf("%d", & hipotenusa);
-			cateto2 = sqrt(hipotenusa*hipotenusa - cateto1*cateto1);
-		break;
-		
-		case 3:
-			printf("\nIngrese el valor del cateto 2: ");
+			
+			cateto2= sqrt(hipotenusa*hipotenusa - cateto1*cateto1);
+			printf("\nEl valor del cateto 1 es: %d", cateto1);
+			printf("\nEl valor del cateto 2 es: %d", cateto2);
+			printf("\nEl valor de la hipotenusa es: %d", hipotenusa);
+			break;
+			
+			case 3:
+			printf("Ingrese cateto 2: ");
 			scanf("%d", & cateto2);
-			printf("\nIngrese el valor de la hipotenusa: ");
+			
+			printf("Ingrese la hipotenusa: ");
 			scanf("%d", & hipotenusa);
-			cateto1 = sqrt(hipotenusa*hipotenusa - cateto2*cateto2);
-		break;
+			
+			cateto1= sqrt(hipotenusa*hipotenusa - cateto2*cateto2);
+			printf("\nEl valor del cateto 1 es: %d", cateto1);
+			printf("\nEl valor del cateto 2 es: %d", cateto2);
+			printf("\nEl valor de la hipotenusa es: %d", hipotenusa);
+			break;
+		}
+		printf("\nSi desea seguir operando ingrese 1 de lo contrario indique 0");
+		scanf("%d", & seguir);
 	}
-    printf("\nEl valor del cateto 1 es: %d", cateto1);
-    printf("\nEl valor del cateto 2 es: %d", cateto2);
-    printf("\nEl valor de la hipotenusa es: %d", hipotenusa);
+	while(seguir==1);
+	
 }
-

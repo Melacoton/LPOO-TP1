@@ -1,18 +1,20 @@
-
 #include <stdio.h>
-int num, resto, acum=0, i;
+int num, cont=0, i;
 main(){
-	printf("Ingrese el numero que desea evaluar: ");
-	scanf("%d", & num);	
-	for(i = 1; i <= num; ++i) {
-        if (num % i == 0) {
-            acum++;
-        }
-    }
-      if (num <= 1 || acum > 2) {
-        printf("\nEl numero no es primo");
-    } else {
-        printf("\nEl numero es primo");
-    }
+	printf("Ingrese un numero: ");
+	scanf("%d", & num);
+	
+	for(i=1;i<=num;i++){
+		if(num % i == 0){
+			cont++;
+		}
+	}
+	if(cont > 2){
+		printf("El numero no es primo");
+	}
+	else{
+		printf("El numero es primo");
+	}
 }
+
 
